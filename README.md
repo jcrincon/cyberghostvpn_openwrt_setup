@@ -19,12 +19,12 @@ opkg install openvpn-openssl
 2. Select Open VPN Protocol (UDP)
 3. Save configuration file and take note of user and password
 4. Rename OVPN file fo CG_XX.conf (Where XX corresponds to the two digit code for the selected country)
-5. Create a `user.txt` file an introduce your credentials like this
+5. Create a `user.txt` file an introduce your credentials like this:
 ```
 USER
 PASSWORD
 ```
-6. Edit CG_XX.conf and change the line
+6. Edit CG_XX.conf and change the line:
 ```
 [...]
 auth-user-pass
@@ -38,7 +38,7 @@ log-append /var/log/openvpn.log
 status /var/log/openvpn-status.log
 [...]
 ```
-And don't forget to save the file
+And don't forget to save the files
 
 6. Copy all the config files to `/etc/openvpn` folder in your router via SCP.
 
@@ -77,7 +77,7 @@ uci commit
 ```
 
 ## Step 4 - Configure DNS
-1. Run the following UCI commands
+1. Run the following UCI commands:
 ```
 uci set network.wan.peerdns='0'
 uci del network.wan.dns
@@ -87,7 +87,7 @@ uci commit
 ```
 
 ## Step 5 - Prevent DNS Leaks
-1. Edit the file `/etc/firewall.user`
+1. Edit the file `/etc/firewall.user` and add the following content:
 ```
 # This file is interpreted as shell script.
 # Put your custom iptables rules here, they will
@@ -143,7 +143,9 @@ https://whatismyipaddress.com/
 ```
 https://dnsleaktest.com/
 ```
-## Final Words
+## Final Words:
 If you reboot your router allow a 30-60sec to properly boot and bring up internet (important if you have a slow router), and additional 30-60sec to bring up VPN.
 
+
+---
 *Last updated: 2020/12/26*
