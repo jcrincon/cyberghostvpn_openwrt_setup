@@ -1,4 +1,6 @@
 # Setup Cyberghost VPN on OpenWRT
+> Firmware: Tested on OpenWRT v19.07.5
+> Router: Archer C7 v5 (US)
 
 ## Step 1 - Open VPN installation
 1. SSH into the your router
@@ -31,6 +33,8 @@ to
 ```
 [...]
 auth-user-pass /etc/openvpn/user.txt
+log-append /var/log/openvpn.log
+status /var/log/openvpn-status.log
 [...]
 ```
 And don't forget to save the file
@@ -119,15 +123,23 @@ fi
 ```
 3. Start Open VPN
 ```
-/etc/init.d/openvpn start
+/etc/init.d/openvpn stop      # stop daemon in case that is currently running
+rm /var/log/openvpn.log       # delete previous OpenVPN log
+/etc/init.d/openvpn start     # start OpenVPN
+sleep 1                       # wait a second.
+tail -f /var/log/openvpn.log  # monitor log.
 ```
+4. When you successfully see `Initialization Sequence Completed` you can press `CTRL+C` to exit.
 
 ## Test VPN Connection
-1. Test Your IP Address
+1. Do a `traceroute 8.8.8.8` (or some other IP) to see if you pass through the VPN.
+2. Test Your IP Address:
 ```
 https://whatismyipaddress.com/
 ```
-2. Run a DNS Leak Test
+3. Run a DNS Leak Test:
 ```
 https://dnsleaktest.com/
 ```
+## Final Words
+If you reboot your router allow a 30-60sec to properly boot and bring up internet (important if you have a slow router), and additional 30-60sec to bring up VPN.
