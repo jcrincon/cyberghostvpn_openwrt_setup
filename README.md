@@ -1,7 +1,7 @@
 # Setup Cyberghost VPN on OpenWRT
-> Firmware: Tested on OpenWRT v19.07.5
+> *Firmware:* Tested on OpenWRT v19.07.5
 >
-> Router: Archer C7 v5 (US)
+> *Router:* Archer C7 v5 (US)
 
 ## Step 1 - Open VPN installation
 1. SSH into the your router
@@ -144,3 +144,5 @@ https://dnsleaktest.com/
 ```
 ## Final Words
 If you reboot your router allow a 30-60sec to properly boot and bring up internet (important if you have a slow router), and additional 30-60sec to bring up VPN.
+
+*Last updated: 2020/12/26*
