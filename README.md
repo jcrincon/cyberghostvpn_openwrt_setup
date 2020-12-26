@@ -106,3 +106,27 @@ if [ "$ACTION" = ifdown ] && (! ip a s tun0 up) && (! iptables -C forwarding_rul
         iptables -I forwarding_rule -j REJECT
 fi
 ```
+
+## Step 6 - Connect
+1. Since we modified firewall we need to run
+```
+/etc/init.d/firewall reload
+```
+2. Since we added a new interface we need to restart network daemon (you will lose connectivity for a moment)
+```
+/etc/init.d/network restart
+```
+3. Start Open VPN
+```
+/etc/init.d/openvpn start
+```
+
+## Test VPN Connection
+1. Test Your IP Address
+```
+https://whatismyipaddress.com/
+```
+2. Run a DNS Leak Test
+```
+https://dnsleaktest.com/
+```
