@@ -34,6 +34,7 @@ auth-user-pass /etc/openvpn/user.txt
 [...]
 ```
 And don't forget to save the file
+
 6. Copy all the config files to `/etc/openvpn` folder in your router via SCP.
 
 ## Step 3 - Configure VPN Client connection
