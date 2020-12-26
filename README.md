@@ -48,7 +48,8 @@ And don't forget to save the file
 # a new OpenVPN instance:
 uci set openvpn.cyberghost=openvpn
 uci set openvpn.cyberghost.enabled='1'
-## rename CG_XX.conf accordingly to Step 2
+
+# rename CG_XX.conf accordingly to Step 2
 uci set openvpn.cyberghost.config='/etc/openvpn/CG_XX.conf'
 
 # a new network interface for tun:
