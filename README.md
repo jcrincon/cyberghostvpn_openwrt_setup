@@ -1,5 +1,6 @@
 # Setup Cyberghost VPN on OpenWRT
 > Firmware: Tested on OpenWRT v19.07.5
+>
 > Router: Archer C7 v5 (US)
 
 ## Step 1 - Open VPN installation
